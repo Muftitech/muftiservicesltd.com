@@ -12,9 +12,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8">
-
+    <header className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
 
           {/* LOGO */}
@@ -24,11 +23,12 @@ export default function Navbar() {
             className="flex items-center gap-3"
           >
             <Image
-              src="/images/logo.png"
+              src="/muftiservicesltd.com/images/logo.png"
               alt="Mufti Services Limited"
               width={55}
               height={55}
               className="object-contain"
+              priority
             />
 
             <div className="hidden sm:block">
@@ -88,7 +88,6 @@ export default function Navbar() {
               Contact
             </Link>
 
-            {/* CTA */}
             <Link
               href="/#contact"
               className="bg-green-700 text-white px-5 py-3 rounded-xl font-bold hover:bg-green-800 transition"
@@ -116,7 +115,6 @@ export default function Navbar() {
         {/* MOBILE NAVIGATION */}
         {menuOpen && (
           <nav className="lg:hidden pb-6">
-
             <div className="flex flex-col gap-2 pt-3">
 
               <Link
@@ -176,7 +174,6 @@ export default function Navbar() {
               </Link>
 
             </div>
-
           </nav>
         )}
 
