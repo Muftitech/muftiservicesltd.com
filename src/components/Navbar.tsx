@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const BASE_PATH = "/muftiservicesltd.com";
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,12 +19,12 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link
-            href={`${BASE_PATH}/`}
+            href="/"
             onClick={closeMenu}
             className="flex items-center gap-3"
           >
             <Image
-              src={`${BASE_PATH}/images/logo.png`}
+              src="/muftiservicesltd.com/images/logo.png"
               alt="Mufti Services Limited"
               width={55}
               height={55}
@@ -48,57 +46,50 @@ export default function Navbar() {
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden lg:flex items-center gap-7">
 
-            {/* HOME */}
             <Link
-              href={`${BASE_PATH}/`}
+              href="/"
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Home
             </Link>
 
-            {/* ABOUT */}
             <Link
-              href={`${BASE_PATH}/#about`}
+              href="/#about"
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               About
             </Link>
 
-            {/* SERVICES */}
             <Link
-              href={`${BASE_PATH}/#services`}
+              href="/#services"
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Services
             </Link>
 
-            {/* MUFTIPAY */}
             <Link
-              href={`${BASE_PATH}/muftipay/`}
+              href="/muftipay/"
               className="font-bold text-green-700 hover:text-green-800 transition"
             >
               MuftiPay
             </Link>
 
-            {/* PROJECTS */}
             <Link
-              href={`${BASE_PATH}/#projects`}
+              href="/#projects"
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Projects
             </Link>
 
-            {/* CONTACT */}
             <Link
-              href={`${BASE_PATH}/#contact`}
+              href="/#contact"
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Contact
             </Link>
 
-            {/* GET STARTED */}
             <Link
-              href={`${BASE_PATH}/#contact`}
+              href="/#contact"
               className="bg-green-700 text-white px-5 py-3 rounded-xl font-bold hover:bg-green-800 transition"
             >
               Get Started
@@ -125,66 +116,58 @@ export default function Navbar() {
         {/* MOBILE NAVIGATION */}
         {menuOpen && (
           <nav className="lg:hidden pb-6">
-
             <div className="flex flex-col gap-2 pt-3">
 
-              {/* HOME */}
               <Link
-                href={`${BASE_PATH}/`}
+                href="/"
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Home
               </Link>
 
-              {/* ABOUT */}
               <Link
-                href={`${BASE_PATH}/#about`}
+                href="/#about"
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 About
               </Link>
 
-              {/* SERVICES */}
               <Link
-                href={`${BASE_PATH}/#services`}
+                href="/#services"
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Services
               </Link>
 
-              {/* MUFTIPAY */}
               <Link
-                href={`${BASE_PATH}/muftipay/`}
+                href="/muftipay/"
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-bold text-green-700 hover:bg-green-50"
               >
                 MuftiPay
               </Link>
 
-              {/* PROJECTS */}
               <Link
-                href={`${BASE_PATH}/#projects`}
+                href="/#projects"
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Projects
               </Link>
 
-              {/* CONTACT */}
               <Link
-                href={`${BASE_PATH}/#contact`}
+                href="/#contact"
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Contact
               </Link>
 
-              {/* GET STARTED */}
               <Link
-                href={`${BASE_PATH}/#contact`}
+                href="/#contact"
                 onClick={closeMenu}
                 className="mt-2 bg-green-700 text-white text-center px-5 py-3 rounded-xl font-bold hover:bg-green-800"
               >
@@ -192,7 +175,6 @@ export default function Navbar() {
               </Link>
 
             </div>
-
           </nav>
         )}
 
