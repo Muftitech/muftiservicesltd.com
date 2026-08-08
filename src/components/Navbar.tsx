@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+const BASE_PATH = "/muftiservicesltd.com";
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -14,16 +16,17 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
+
         <div className="flex items-center justify-between h-20">
 
           {/* LOGO */}
           <Link
-            href="/"
+            href={`${BASE_PATH}/`}
             onClick={closeMenu}
             className="flex items-center gap-3"
           >
             <Image
-              src="/muftiservicesltd.com/images/logo.png"
+              src={`${BASE_PATH}/images/logo.png`}
               alt="Mufti Services Limited"
               width={55}
               height={55}
@@ -45,22 +48,25 @@ export default function Navbar() {
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden lg:flex items-center gap-7">
 
+            {/* HOME */}
             <Link
-              href="/"
+              href={`${BASE_PATH}/`}
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Home
             </Link>
 
+            {/* ABOUT */}
             <Link
-              href="/#about"
+              href={`${BASE_PATH}/#about`}
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               About
             </Link>
 
+            {/* SERVICES */}
             <Link
-              href="/#services"
+              href={`${BASE_PATH}/#services`}
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Services
@@ -68,28 +74,31 @@ export default function Navbar() {
 
             {/* MUFTIPAY */}
             <Link
-              href="/muftipay"
+              href={`${BASE_PATH}/muftipay/`}
               className="font-bold text-green-700 hover:text-green-800 transition"
             >
               MuftiPay
             </Link>
 
+            {/* PROJECTS */}
             <Link
-              href="/#projects"
+              href={`${BASE_PATH}/#projects`}
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Projects
             </Link>
 
+            {/* CONTACT */}
             <Link
-              href="/#contact"
+              href={`${BASE_PATH}/#contact`}
               className="font-semibold text-gray-700 hover:text-green-700 transition"
             >
               Contact
             </Link>
 
+            {/* GET STARTED */}
             <Link
-              href="/#contact"
+              href={`${BASE_PATH}/#contact`}
               className="bg-green-700 text-white px-5 py-3 rounded-xl font-bold hover:bg-green-800 transition"
             >
               Get Started
@@ -102,6 +111,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
             aria-label="Open menu"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? (
               <span className="text-3xl">✕</span>
@@ -115,58 +125,66 @@ export default function Navbar() {
         {/* MOBILE NAVIGATION */}
         {menuOpen && (
           <nav className="lg:hidden pb-6">
+
             <div className="flex flex-col gap-2 pt-3">
 
+              {/* HOME */}
               <Link
-                href="/"
+                href={`${BASE_PATH}/`}
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Home
               </Link>
 
+              {/* ABOUT */}
               <Link
-                href="/#about"
+                href={`${BASE_PATH}/#about`}
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 About
               </Link>
 
+              {/* SERVICES */}
               <Link
-                href="/#services"
+                href={`${BASE_PATH}/#services`}
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Services
               </Link>
 
+              {/* MUFTIPAY */}
               <Link
-                href="/muftipay"
+                href={`${BASE_PATH}/muftipay/`}
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-bold text-green-700 hover:bg-green-50"
               >
                 MuftiPay
               </Link>
 
+              {/* PROJECTS */}
               <Link
-                href="/#projects"
+                href={`${BASE_PATH}/#projects`}
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Projects
               </Link>
 
+              {/* CONTACT */}
               <Link
-                href="/#contact"
+                href={`${BASE_PATH}/#contact`}
                 onClick={closeMenu}
                 className="px-4 py-3 rounded-lg font-semibold text-gray-700 hover:bg-green-50 hover:text-green-700"
               >
                 Contact
               </Link>
 
+              {/* GET STARTED */}
               <Link
-                href="/#contact"
+                href={`${BASE_PATH}/#contact`}
                 onClick={closeMenu}
                 className="mt-2 bg-green-700 text-white text-center px-5 py-3 rounded-xl font-bold hover:bg-green-800"
               >
@@ -174,6 +192,7 @@ export default function Navbar() {
               </Link>
 
             </div>
+
           </nav>
         )}
 
