@@ -24,8 +24,8 @@ export default function Navbar() {
             className="flex items-center gap-3"
           >
             <Image
-              src="/muftiservicesltd.com/images/logo.png"
-              alt="Mufti Services Limited"
+                src="/images/logo.png"
+                alt="Mufti Services Limited"
               width={55}
               height={55}
               className="object-contain"
